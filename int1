@@ -1,0 +1,28 @@
+# importing pandas package 
+import pandas as pd 
+  
+# making data frame from csv file 
+df = pd.read_csv("file.csv") 
+  
+# sorting by parameter ,can be any parameter we want
+df.sort_values("parameter", inplace = True) 
+  
+# making a bool series 
+bool_series = df["parameter"].duplicated() #this duplicated method is what we are going to use ,to filter out duplicates,by default it was keep=first,so lets keep it that way
+  
+# display data 
+df[bool_series] 
+ 
+
+ #Removing duplicates now
+   
+# making a bool series 
+bool_series = df["parameter"].duplicated(keep = False) 
+
+  
+# passing NOT of bool series to see unique values only 
+data = data[~bool_series] 
+  
+done.
+q2:Dimensionality reduction is the method of reducing, by having a set of main variables, the number of random variables under consideration.
+As training a ds with a lot of features will be impractical..this is my understanding.
